@@ -3,9 +3,9 @@
 
   Part of the AI for Games library
   Copyright (c) 2011 Peter Lager
-	Licensed under the GNU LGPL v2.1
+  Licensed under the GNU LGPL v2.1
 
-	This modified copy is relicensed under the GNU GPL v3.0
+  This modified copy is relicensed under the GNU GPL v3.0
  */
 
 package pathfinder;
