@@ -1,0 +1,20 @@
+load("@contrib_rules_jvm//java:defs.bzl", "java_test_suite")
+
+java_test_suite(
+    name = "trafficsim",
+    package = "trafficsim",
+    size = "small",
+    srcs = ["ExampleTest.java"],
+    runner = "junit5",
+    runtime_deps = [
+        "@maven//:org_junit_jupiter_junit_jupiter_engine",
+        "@maven//:org_junit_platform_junit_platform_launcher",
+        "@maven//:org_junit_platform_junit_platform_reporting",
+    ],
+    deps = [
+        "//src/main/java/trafficsim",
+        "@maven//:org_junit_jupiter_junit_jupiter_api",
+        # JUnit4
+        #"@maven//:junit_junit",
+    ],
+)

@@ -1,0 +1,30 @@
+load("@buildifier_prebuilt//:rules.bzl", "buildifier")
+load("@gazelle//:def.bzl", "gazelle", "gazelle_binary")
+
+buildifier(
+    name = "buildifier",
+    exclude_patterns = [
+        "./.git/*",
+    ],
+    lint_mode = "warn",
+    mode = "fix",
+)
+
+gazelle(
+    name = "gazelle",
+    gazelle = ":gazelle_bin",
+)
+
+gazelle_binary(
+    name = "gazelle_bin",
+    languages = [
+        "@gazelle//language/proto",
+        "@contrib_rules_jvm//java/gazelle",
+    ],
+)
+
+# ref: https://github.com/bazel-contrib/rules_jvm/blob/main/java/gazelle/javaconfig/config.go
+
+# gazelle:build_file_name BUILD.bazel
+# gazelle:java_test_file_suffixes Test.java
+# gazelle:java_test_mode suite

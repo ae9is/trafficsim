@@ -1,0 +1,21 @@
+load("@rules_java//java:defs.bzl", "java_library")
+
+java_library(
+    name = "pathfinder",
+    srcs = [
+        "AshCrowFlight.java",
+        "AshManhattan.java",
+        "AstarHeuristic.java",
+        "Graph.java",
+        "GraphEdge.java",
+        "GraphNode.java",
+        "GraphSearch_Astar.java",
+        "GraphSearch_BFS.java",
+        "GraphSearch_DFS.java",
+        "GraphSearch_Dijkstra.java",
+        "IGraphSearch.java",
+        "Message.java",
+        "PathFinder.java",
+    ],
+    visibility = ["//:__subpackages__"],
+)

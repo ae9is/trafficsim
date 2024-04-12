@@ -1,0 +1,3 @@
+#!/bin/sh
+bazel test --test_output=errors //...
+

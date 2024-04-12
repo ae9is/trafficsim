@@ -1,0 +1,68 @@
+load("@rules_java//java:defs.bzl", "java_binary", "java_library")
+
+java_library(
+    name = "trafficsim",
+    srcs = [
+        "About.java",
+        "BasicTrafficController.java",
+        "Bounds.java",
+        "Car.java",
+        "DMV.java",
+        "DrawingObject.java",
+        "DrawingPanel.java",
+        "IntelligentDriverModel.java",
+        "Intersection.java",
+        "Lane.java",
+        "LinearWeightedTrafficController.java",
+        "Member.java",
+        "Node.java",
+        "NodePair.java",
+        "NormalTrafficController.java",
+        "OsmParser.java",
+        "OsmType.java",
+        "PixelCoords.java",
+        "ProjectionConverter.java",
+        "Relation.java",
+        "RoadTypes.java",
+        "RoutePlanner.java",
+        "Sim.java",
+        "TrafficController.java",
+        "TrafficFlowModel.java",
+        "TrafficSim.java",
+        "Way.java",
+        "ZoomPanScrollPane.java",
+    ],
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//src/main/java/pathfinder",
+        "//src/main/java/util",
+    ],
+)
+
+java_binary(
+    name = "TrafficSim",
+    main_class = "trafficsim.TrafficSim",
+    visibility = ["//visibility:public"],
+    runtime_deps = [":trafficsim"],
+)
+
+java_binary(
+    name = "OsmParser",
+    main_class = "trafficsim.OsmParser",
+    visibility = ["//visibility:public"],
+    runtime_deps = [":trafficsim"],
+)
+
+java_binary(
+    name = "ProjectionConverter",
+    main_class = "trafficsim.ProjectionConverter",
+    visibility = ["//visibility:public"],
+    runtime_deps = [":trafficsim"],
+)
+
+java_binary(
+    name = "Sim",
+    main_class = "trafficsim.Sim",
+    visibility = ["//visibility:public"],
+    runtime_deps = [":trafficsim"],
+)
