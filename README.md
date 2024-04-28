@@ -16,6 +16,8 @@ Future work could be to:
 - Improve reality of simulation (traffic laws, physics)
 - Fix outstanding issues and add some tests
 
+<img src="resources/screenshot.jpg" width=400 />
+
 ## Build
 
 Install [bazelisk](https://github.com/bazelbuild/bazelisk)
